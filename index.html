@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" class="dark"> <!-- Changed default to dark mode -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ahmadi Religion of Peace and Light - Official Library</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter (for body text) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts - Cinzel (for headings, similar to original site) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles from original site, adapted for YouTube theme */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Default to light theme with better contrast */
+            background-color: #ffffff; /* Pure white background for light mode */
+            color: #333333; /* Dark gray text for better readability */
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .font-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+        .hero-bg {
+            /* Using a generic image, could be replaced with a channel banner */
+            background-image: url('https://i.ibb.co/21qg3c15/1000000508-1.jpg'); /* Updated background image */
+            background-color: #1a202c; /* Fallback color */
+            background-size: contain; /* Changed to contain to show full image */
+            background-position: center;
+            background-repeat: no-repeat; /* Ensure no repetition */
+            background-attachment: fixed; /* Parallax effect */
+            height: 100vh; /* Make the section take full viewport height */
+            display: flex; /* Use flexbox for vertical centering */
+            align-items: center; /* Center content vertically */
+            justify-content: center; /* Center content horizontally */
+        }
+        .nav-bg {
+            background-color: rgba(255, 255, 255, 0.95); /* White nav for light mode */
+            backdrop-filter: blur(10px);
+        }
+        .card {
+            background-color: #ffffff; /* White cards for light mode */
+            border: 1px solid #e0e0e0; /* Lighter border */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px); /* Slightly less aggressive hover */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .btn-primary {
+            background-color: #ff0000; /* YouTube Red */
+            color: white;
+            transition: background-color 0.3s ease;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #cc0000; /* Darker red */
+        }
+        blockquote {
+            border-left: 4px solid #ff0000; /* YouTube Red accent */
+            background-color: #f9f9f9; /* Lighter blockquote bg */
+            transition: background-color 0.3s;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cinzel', serif;
+            color: #333333; /* Dark text for headings in light mode */
+            transition: color 0.3s;
+        }
+
+        /* Dark Mode Styles */
+        .dark body {
+            background-color: #1a1a1a; /* Dark background */
+            color: #e0e0e0; /* Light gray text */
+        }
+        .dark .nav-bg {
+            background-color: rgba(34, 34, 34, 0.95); /* Darker nav for dark mode */
+        }
+        .dark .card {
+            background-color: #2c2c2c; /* Darker card background */
+            border-color: #444444;
+        }
+        .dark h1, .dark h2, .dark h3, .dark h4 {
+            color: #e0e0e0; /* Lighter text for dark mode headings */
+        }
+        .dark blockquote {
+            background-color: #2c2c2c;
+            border-left-color: #ff0000; /* YouTube Red accent */
+        }
+        .dark #about, .dark #videos, .dark #playlists, .dark #sacred-texts, .dark #contact {
+            background-color: #2c2c2c; /* Darker section backgrounds */
+        }
+        .dark .bg-white {
+             background-color: #2c2c2c !important; /* Override specific white backgrounds */
+        }
+        .dark .bg-gray-50 {
+            background-color: #1a1a1a !important; /* Override gray-50 in dark mode */
+        }
+        .dark .text-gray-500 {
+            color: #a0a0a0;
+        }
+        .dark .text-gray-700 {
+            color: #e0e0e0;
+        }
+        .dark .form-input {
+            background-color: #444444;
+            border-color: #666666;
+            color: #e0e0e0;
+        }
+        .dark .form-input::placeholder {
+            color: #a0a0a0;
+        }
+        .dark #contact {
+            background-color: #1a1a1a; /* Darkest background for contact */
+        }
+        .dark .bg-gray-800 {
+            background-color: #0d0d0d !important; /* Footer background */
+        }
+        .dark .text-gray-300 {
+            color: #e0e0e0; /* Nav links in dark mode */
+        }
+        .dark .text-gray-400 {
+            color: #a0a0a0; /* Footer text in dark mode */
+        }
+        .dark .text-gray-900 {
+            color: #e0e0e0; /* General dark text in dark mode */
+        }
+        .dark .text-blue-700 {
+            color: #ff0000; /* Hero button text in dark mode */
+        }
+        .dark .hover\\:text-\\[\\#0066ff\\]:hover {
+            color: #ff0000 !important; /* Hover effect for nav links */
+        }
+        .dark .text-\\[\\#0066ff\\] {
+            color: #ff0000 !important; /* Primary blue to YouTube red */
+        }
+
+        /* Accessibility: Skip to Content Link */
+        .skip-to-content {
+            position: absolute;
+            left: -10000px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-to-content:focus {
+            position: static;
+            width: auto;
+            height: auto;
+            overflow: visible;
+            clip: auto;
+            background: #ff0000; /* YouTube Red */
+            color: white;
+            padding: 1rem;
+            display: block;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* Performance: Disable parallax on mobile */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+<!-- Accessibility Skip Link -->
+<a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<!-- Header & Navigation -->
+<header class="sticky top-0 z-50 shadow-md">
+<nav class="nav-bg">
+    <div class="container mx-auto px-6 py-2 flex justify-between items-center">
+        <!-- Logo/Channel Name -->
+        <a href="#home" class="flex items-center">
+            <img src="https://mlpaojbb13rg.i.optimole.com/cb:bOvH.5f4b/w:600/h:140/q:mauto/f:best/https://theahmadireligion.org/wp-content/uploads/2024/01/AROPAL-LOGO-TEXTURE-NAME-horizontal-original-small-new.png" alt="The Ahmadi Religion of Peace and Light Logo" class="h-10 md:h-12 w-auto">
+        </a>
+        <div class="hidden md:flex space-x-4 items-center">
+            <a href="#home" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">Home</a>
+            <a href="https://theahmadireligion.org/library/" target="_blank" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">Library</a>
+            <a href="#videos" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">Videos</a>
+            <a href="#playlists" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">Playlists</a>
+            <a href="#about" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">About</a>
+            <a href="#contact" class="text-gray-700 dark:text-gray-300 hover:text-[#ff0000] px-3 py-2 rounded-md text-sm font-medium">Connect</a>
+            <!-- Theme Toggle Button (Desktop) - Removed -->
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center">
+            <!-- Theme Toggle Button (Mobile) - Removed -->
+            <button id="mobile-menu-button" class="text-gray-700 dark:text-gray-300 focus:outline-none">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-gray-100 dark:bg-[#222222]">
+        <a href="#home" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">Home</a>
+        <a href="https://theahmadireligion.org/library/" target="_blank" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">Library</a>
+        <a href="#videos" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">Videos</a>
+        <a href="#playlists" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">Playlists</a>
+        <a href="#about" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">About</a>
+        <a href="#contact" class="block text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-[#333333] px-4 py-3">Connect</a>
+    </div>
+</nav>
+</header>
+
+<!-- Hero Section - Introduction to the Library -->
+<section id="home" class="hero-bg text-white py-20 md:py-24 rounded-b-lg shadow-lg mx-4 mt-4 text-center transition-colors duration-300">
+    <div class="text-center bg-black bg-opacity-60 p-8 md:p-12 rounded-lg max-w-4xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-extrabold font-cinzel leading-tight mb-4">
+            The Ahmadi Religion of Peace and Light
+        </h2>
+        <!-- Added Library button here -->
+        <a href="https://theahmadireligion.org/library/" target="_blank" class="inline-block bg-[#ff0000] text-white px-8 py-3 rounded-full text-lg font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 mt-8">
+            Go to Library
+        </a>
+    </div>
+</section>
+
+<!-- Main Content -->
+<main id="main-content">
+<!-- Videos Section (formerly Key Videos) -->
+<section id="videos" class="collapsible-section py-16 md:py-24 bg-white dark:bg-[#222222] rounded-lg shadow-md mx-4 mt-8 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <h3 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">Videos</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Video 1 -->
+            <div class="card p-4 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="relative pt-[56.25%] mb-4"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute inset-0 w-full h-full rounded-lg" src="https://www.youtube.com/embed/VIDEO_ID_1?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Video 1 Title"></iframe>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Video 1: Understanding the Message</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    An essential video explaining the core tenets and purpose of the Ahmadi Religion of Peace and Light.
+                </p>
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID_1" target="_blank" class="inline-block bg-[#ff0000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#cc0000] transition-colors">Watch Video</a>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="card p-4 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="relative pt-[56.25%] mb-4"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute inset-0 w-full h-full rounded-lg" src="https://www.youtube.com/embed/VIDEO_ID_2?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Video 2 Title"></iframe>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Video 2: Debates and Discussions</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    Highlights from profound debates and discussions with various scholars and individuals.
+                </p>
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID_2" target="_blank" class="inline-block bg-[#ff0000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#cc0000] transition-colors">Watch Video</a>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="card p-4 rounded-xl shadow-lg overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <div class="relative pt-[56.25%] mb-4"> <!-- 16:9 Aspect Ratio -->
+                    <iframe class="absolute inset-0 w-full h-full rounded-lg" src="https://www.youtube.com/embed/VIDEO_ID_3?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy" title="Video 3 Title"></iframe>
+                </div>
+                <h4 class="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-2">Video 3: Personal Testimonies</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    Inspiring stories and experiences from individuals who have embraced the call.
+                </p>
+                <a href="https://www.youtube.com/watch?v=VIDEO_ID_3" target="_blank" class="inline-block bg-[#ff0000] text-white px-4 py-2 rounded-full text-sm hover:bg-[#cc0000] transition-colors">Watch Video</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Playlists Section (formerly Key Playlists) -->
+<section id="playlists" class="collapsible-section py-16 md:py-24 bg-gray-50 dark:bg-[#1a1a1a] rounded-lg shadow-md mx-4 mt-8 transition-colors duration-300">
+    <div class="container mx-auto px-4">
+        <h3 class="text-3xl md:text-4xl font-bold text-center text-gray-900 dark:text-gray-100 mb-12">Playlists</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            <!-- Playlist 1 -->
+            <div class="card p-6 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Full Lecture Series</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    Comprehensive collections of lectures on various spiritual and theological topics.
+                </p>
+                <a href="https://www.youtube.com/playlist?list=PL_PLACEHOLDER_PLAYLIST_ID_4" target="_blank" class="text-[#ff0000] dark:text-red-400 hover:underline text-sm">View Playlist &rarr;</a>
+            </div>
+            <!-- Playlist 2 -->
+            <div class="card p-6 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Q&A Archives</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    All recorded question and answer sessions, providing clarity on common inquiries.
+                </p>
+                <a href="https://www.youtube.com/playlist?list=PL_PLACEHOLDER_PLAYLIST_ID_5" target="_blank" class="text-[#ff0000] dark:text-red-400 hover:underline text-sm">View Playlist &rarr;</a>
+            </div>
+            <!-- Playlist 3 -->
+            <div class="card p-6 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Short Clips & Insights</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    A collection of concise and impactful short videos for quick spiritual reflections.
+                </p>
+                <a href="https://www.youtube.com/playlist?list=PL_PLACEHOLDER_PLAYLIST_ID_6" target="_blank" class="text-[#ff0000] dark:text-red-400 hover:underline text-sm">View Playlist &rarr;</a>
+            </div>
+            <!-- Playlist 4 -->
+            <div class="card p-6 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition-transform duration-300">
+                <h4 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2">Sacred Texts Discussions</h4>
+                <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+                    Playlists dedicated to in-depth discussions on various sacred texts.
+                </p>
+                <a href="https://www.youtube.com/playlist?list=PL_PLACEHOLDER_PLAYLIST_ID_7" target="_blank" class="text-[#ff0000] dark:text-red-400 hover:underline text-sm">View Playlist &rarr;</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- About Section -->
+<section id="about" class="collapsible-section py-16 md:py-24 bg-white dark:bg-[#222222] rounded-lg shadow-md mx-4 mt-8 transition-colors duration-300">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center gap-12">
+        <div class="md:w-1/2">
+            <img src="https://placehold.co/600x400/ff0000/ffffff?text=About+Nasar+Hashem" alt="About Nasar Hashem" class="rounded-xl shadow-xl transform hover:scale-105 transition-transform duration-300">
+        </div>
+        <div class="md:w-1/2 text-center md:text-left">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">About Nasar Hashem</h2>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                Nasar Hashem's YouTube channel is dedicated to exploring profound spiritual and philosophical topics. Through insightful lectures, engaging interviews, and thought-provoking discussions, Nasar aims to provide clarity and guidance on matters of faith, self-discovery, and universal truths.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+                Join a growing community of seekers and delve deeper into timeless wisdom. This library serves as a valuable resource for your spiritual journey.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="collapsible-section py-16 md:py-24 bg-[#ff0000] dark:bg-[#0d0d0d] text-white rounded-lg shadow-md mx-4 mt-8 transition-colors duration-300">
+    <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Stay Connected</h2>
+        <p class="text-lg md:text-xl mb-8 opacity-90">
+            Subscribe to our newsletter for exclusive content updates and announcements.
+        </p>
+        <form action="https://formsubmit.co/your-email@example.com" method="POST" class="max-w-xl mx-auto">
+            <input type="hidden" name="_subject" value="New submission from Nasar Hashem Library!">
+            <div class="flex flex-col sm:flex-row gap-4">
+                <input type="email" placeholder="Your email address" class="flex-grow p-4 rounded-xl border border-white dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-white text-gray-900 placeholder-gray-500" required>
+                <button type="submit" class="bg-white text-[#ff0000] hover:bg-gray-100 px-8 py-4 rounded-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300">
+                    Subscribe Now
+                </button>
+            </div>
+        </form>
+        <p class="mt-8 text-sm opacity-80">We respect your privacy and will never share your email.</p>
+    </div>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-gray-800 dark:bg-[#0d0d0d] text-gray-400 py-12 mt-8 rounded-t-lg shadow-inner transition-colors duration-300">
+    <div class="container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <div class="flex-shrink-0">
+                <a href="#home">
+                    <img src="https://mlpaojbb13rg.i.optimole.com/cb:bOvH.5f4b/w:600/h:140/q:mauto/f:best/https://theahmadireligion.org/wp-content/uploads/2024/01/AROPAL-LOGO-TEXTURE-NAME-horizontal-original-small-new.png" alt="The Ahmadi Religion of Peace and Light Logo" class="h-10 md:h-12 w-auto">
+                </a>
+            </div>
+            <div class="text-center">
+                <p>&copy; 2025 Nasar Hashem. All rights reserved.</p>
+            </div>
+            <div class="flex space-x-6 items-center">
+                <!-- Social Media Icons -->
+                <a href="https://www.youtube.com/@Nasarhashem" class="hover:text-white" aria-label="Youtube" target="_blank" rel="noopener">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0C.887 3.427 0 4.288 0 8.001v7.998c0 3.714.887 4.574 4.385 4.816 3.6.245 11.626.246 15.23 0 3.498-.242 4.385-1.102 4.385-4.816V8.001c0-3.713-.887-4.574-4.385-4.817zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path></svg>
+                </a>
+                <!-- Instagram Icon -->
+                <a href="https://www.instagram.com/nasarhashem/" class="hover:text-white" aria-label="Instagram" target="_blank" rel="noopener">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.7c-.5 0-.7.2-.9.4-.2.2-.4.4-.4.9s.2.7.4.9c.2.2.4.4.9.4s.7-.2.9-.4c.2-.2.4-.4.4-.9s-.2-.7-.4-.9c-.2-.2-.4-.4-.9-.4zm5.2 2.7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6-2.7-6-6-6zm0 10c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4z"/></svg>
+                </a>
+                <!-- TikTok Icon -->
+                <a href="https://www.tiktok.com/@nasarhashem" class="hover:text-white" aria-label="TikTok" target="_blank" rel="noopener">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.75 2v14.25a3.75 3.75 0 11-3.75-3.75c.13 0 .26.01.39.02V9.5a7.25 7.25 0 102.36 13.98c4.01-.36 7.14-3.77 7.14-7.98V2h-6.14zm0 16.25a2 2 0 11-2-2c.11 0 .22.01.33.02V9.5a5.25 5.25 0 101.67 8.75c2.9-.26 5.17-2.73 5.17-5.75V2h-5.17v16.25z"/></svg>
+                </a>
+            </div>
+        </div>
+        <div class="mt-8 pt-6 border-t border-gray-700 dark:border-gray-600 text-center">
+            <p class="text-sm text-gray-400">&copy; 2025 Nasar Hashem. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Theme toggle (simplified to only set dark mode)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+        const themeToggleBtnMobile = document.getElementById('theme-toggle-mobile');
+        const themeToggleDarkIconMobile = document.getElementById('theme-toggle-dark-icon-mobile');
+        const themeToggleLightIconMobile = document.getElementById('theme-toggle-light-icon-mobile');
+        const root = document.documentElement;
+
+        const applyTheme = (theme) => {
+            if (theme === 'dark') {
+                root.classList.add('dark');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.remove('hidden');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.add('hidden');
+                if (themeToggleDarkIconMobile) themeToggleDarkIconMobile.classList.remove('hidden');
+                if (themeToggleLightIconMobile) themeToggleLightIconMobile.classList.add('hidden');
+            } else {
+                root.classList.remove('dark');
+                if (themeToggleDarkIcon) themeToggleDarkIcon.classList.add('hidden');
+                if (themeToggleLightIcon) themeToggleLightIcon.classList.remove('hidden');
+                if (themeToggleDarkIconMobile) themeToggleDarkIconMobile.classList.add('hidden');
+                if (themeToggleLightIconMobile) themeToggleLightIconMobile.classList.remove('hidden');
+            }
+        };
+
+        // Set theme to dark by default and persist
+        applyTheme('dark');
+        localStorage.setItem('theme', 'dark');
+
+        // Re-add collapsible functionality, collapsed by default
+        const sectionSelectors = ['.collapsible-section']; // Only target sections with this class
+        sectionSelectors.forEach(selector => {
+            document.querySelectorAll(selector).forEach(section => {
+                let heading = section.querySelector('h2, h3, h4');
+                if (heading) {
+                    heading.style.cursor = 'pointer';
+                    heading.title = 'Click to collapse/expand';
+                    let icon = document.createElement('span');
+                    icon.textContent = '▼'; // Down arrow
+                    icon.style.marginLeft = '0.5em';
+                    icon.style.fontSize = '0.8em';
+                    icon.style.transition = 'transform 0.2s';
+                    heading.appendChild(icon);
+
+                    let content = document.createElement('div');
+                    let sibling = heading.nextSibling;
+                    while (sibling) {
+                        if (sibling.nodeType === Node.ELEMENT_NODE && sibling.matches('h2, h3, h4, section, div.card')) {
+                            break;
+                        }
+                        let next = sibling.nextSibling;
+                        content.appendChild(sibling);
+                        sibling = next;
+                    }
+
+                    // Append the content wrapper to the section
+                    section.appendChild(content);
+
+                    // Set initial state to expanded (uncollapsible by default)
+                    content.style.transition = 'max-height 0.3s ease-out, opacity 0.3s ease-out';
+                    content.style.overflow = 'hidden';
+                    content.style.maxHeight = content.scrollHeight + 'px'; // Expanded by default
+                    content.style.opacity = '1';
+                    icon.style.transform = 'rotate(0deg)'; // Icon for expanded state
+
+                    heading.addEventListener('click', function() {
+                        if (content.style.maxHeight === '0px' || content.style.maxHeight === '') {
+                            content.style.maxHeight = content.scrollHeight + 'px'; // Expand
+                            content.style.opacity = '1';
+                            icon.style.transform = 'rotate(0deg)'; // Rotate icon down
+                        } else {
+                            content.style.maxHeight = '0px'; // Collapse
+                            content.style.opacity = '0';
+                            icon.style.transform = 'rotate(-90deg)'; // Rotate icon sideways
+                        }
+                    });
+                }
+            });
+        });
+    });
+</script>
+</body>
+</html>
